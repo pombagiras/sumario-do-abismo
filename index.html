@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030303">
+    <title>Portal Visceral | Alexia Melusine</title>
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/pombagiras/melusine/main/Al%C3%AA%20(3)%20(3)%20(1).png">
+
+    <style>
+        :root {
+            --bg-dark: #030303;
+            --accent-red: #8b0000;
+            --text-gray: #b0b0b0;
+            --border-color: #222;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-red);
+            margin-top: 20px;
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: #fff;
+            margin: 15px 0 5px 0;
+        }
+
+        .tagline {
+            font-size: 0.7rem;
+            margin-bottom: 30px;
+            color: var(--accent-red);
+        }
+
+        /* Accordion Style */
+        .section-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .accordion {
+            background: #0a0a0a;
+            color: #fff;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            outline: none;
+            font-size: 0.9rem;
+            transition: 0.4s;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .active, .accordion:hover {
+            background-color: #111;
+            border-color: var(--accent-red);
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: #050505;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-left: 1px solid var(--accent-red);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .link-item {
+            display: block;
+            padding: 15px 0;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #111;
+        }
+
+        .link-item:hover { color: var(--accent-red); }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.6rem;
+            text-align: center;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://raw.githubusercontent.com/pombagiras/melusine/main/Al%C3%AA%20(3)%20(3)%20(1).png" alt="Alexia Melusine" class="profile-img">
+    
+    <h1>ALEXIA MELUSINE</h1>
+    <p class="tagline">SUMÁRIO DO ABISMO_</p>
+
+    <div class="section-container">
+        <button class="accordion" onclick="vibrate()">BIO & RITUAIS <span>+</span></button>
+        <div class="panel">
+            <a href="https://bio.site/AlmasdePombagira" class="link-item" target="_blank">Almas de Pombagira</a>
+            <a href="https://linktr.ee/alexiarosadefogo" class="link-item" target="_blank">Alexia Rosa de Fogo</a>
+            <a href="https://pombagiras.my.canva.site/" class="link-item" target="_blank">Portal Visual</a>
+        </div>
+
+        <button class="accordion" onclick="vibrate()">REPOSITÓRIOS (GITHUB) <span>+</span></button>
+        <div class="panel">
+            <a href="https://github.com/pombagiras" class="link-item" target="_blank">@pombagiras</a>
+            <a href="https://github.com/Orgulho-Trans" class="link-item" target="_blank">@Orgulho-Trans</a>
+            <a href="https://github.com/alexialuzdeferro" class="link-item" target="_blank">@alexialuzdeferro</a>
+        </div>
+
+        <button class="accordion" onclick="vibrate()">SOM & COMUNIDADE <span>+</span></button>
+        <div class="panel">
+            <a href="https://substack.com/@alexiamelusine" class="link-item" target="_blank">Substack (Textos)</a>
+            <a href="https://t.me/pomba_giras" class="link-item" target="_blank">Telegram</a>
+            <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" class="link-item" target="_blank">Canal WhatsApp</a>
+            <a href="https://discord.gg/gWZP8R7Dqu" class="link-item" target="_blank">Discord</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 - FEITO NO LIMBO <br>
+        ALEXIA LUZ DE FERRO
+    </footer>
+
+    <script>
+        // Lógica do Accordion
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+        // Função de Vibração (Haptic Feedback)
+        function vibrate() {
+            if (navigator.vibrate) {
+                navigator.vibrate(10); // Vibração curta de 10ms
+            }
+        }
+    </script>
+</body>
+</html>
